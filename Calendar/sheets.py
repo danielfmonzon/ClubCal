@@ -19,7 +19,7 @@ sheet = client.open("CourseCal_dataset").sheet1
 
 still_receiving = True
 col_i = 3
-event_vec = []
+event_dict = {}
 
 while still_receiving:
     cur_col = sheet.col_values(col_i)
@@ -28,19 +28,19 @@ while still_receiving:
     if len(cur_col) == 0:
         still_receiving = False
 
-    else:
+    elif len(cur_col) != 1:
         while len(cur_col) < 6:
             cur_col.append('')
 
-        event_vec.append(Event(cur_col[1], cur_col[2], cur_col[3], cur_col[4], cur_col[5]))
-        col_i += 1
+        event_dict[col_i - 2] = Event(cur_col[1], cur_col[2], cur_col[3], cur_col[4], cur_col[5])
+    col_i += 1
 
 
-for z in range(len(event_vec)):
+'''for z in range(len(event_dict)):
 
     print(f"Day {z}")
-    event_vec[z].event_print()
+    event_dict[z].event_print()
     print()
 
 # print(testcol)
-# print(data)
+# print(data)'''
