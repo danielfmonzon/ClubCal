@@ -1,9 +1,10 @@
 import tkinter as tk
 import calendar_class
+import calendar
 from calendar import monthrange, weekday
 
 class CalendarApp:
-    def __init__(self, root, year = 2024, month = 2):
+    def __init__(self, root, year = 2024, month = 4):
         self.root = root
         self.root.title("Calendar Events")
         self.data = {}
@@ -13,11 +14,19 @@ class CalendarApp:
         # Create the main frame with padding and pack it to expand and fill in both directions
         self.main_frame = tk.Frame(root, padx = 10, pady = 0)
         self.main_frame.pack(fill = tk.BOTH, expand = True)
-
+        
+        # Create a separate frame for the month/year and title labels
+        title_frame = tk.Frame(self.main_frame, pady = 10)
+        title_frame.pack(fill = tk.X)
+        
+        # Display the current month and year in the top left corner
+        month_year_label = tk.Label(title_frame, text = f"{calendar.month_name[self.month]} {self.year}", font = ('Times New Roman', 12))
+        month_year_label.pack(side=tk.LEFT, anchor = 'nw')
+        
         # Make title label bigger and centered at the very top of the main_frame
-        self.title_label = tk.Label(self.main_frame, text = "CourseCal", font = ('Times New Roman', 20))
+        self.title_label = tk.Label(title_frame, text = "CourseCal", font = ('Times New Roman', 20))
         # Pack the label at the top of the window
-        self.title_label.pack(side = tk.TOP)
+        self.title_label.pack(side = tk.TOP, fill = tk.X)
         
         self.draw_calendar()
         
