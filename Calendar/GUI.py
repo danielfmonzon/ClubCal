@@ -7,6 +7,9 @@ from oauth2client.service_account import ServiceAccountCredentials
 from calendar import monthrange, weekday
 from math import ceil
 
+# The blue color code for the Florida Gators logo is Pantone: PMS 287 C, Hex Color: #0021A5, RGB: (0, 33, 165), CMYK: (100, 60, 0, 20). 
+# The orange color code for the Florida Gators logo is Pantone: PMS 172 C, Hex Color: #FA4616, RGB: (250, 70, 22), CMYK: (0, 70, 100, 0).
+
 class CalendarApp:
     def __init__(self, root, data,  year = 2024, month = 3):
         self.root = root
