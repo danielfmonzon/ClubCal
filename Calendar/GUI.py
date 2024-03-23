@@ -78,9 +78,9 @@ class CalendarApp:
         popup.title("Events")
         
         # Use a Text widget for complex formatting
-        text_widget = tk.Text(popup, font=('Times New Roman', 14), bg="white", height=10, width=50)
-        text_widget.tag_configure('center', justify='center')
-        text_widget.tag_configure('left', justify='left')
+        text_widget = tk.Text(popup, font=('Times New Roman', 14), bg = "white", height = 10, width = 50)
+        text_widget.tag_configure('center', justify = 'center')
+        text_widget.tag_configure('left', justify = 'left')
         text_widget.insert('1.0', f"Day {day}\n", 'center')
         if self.data.get(day) is not None:
             event_text = f"{self.data[day].name}\n{self.data[day].description}\n{self.data[day].location}\n{self.data[day].start_time}\n{self.data[day].end_time}"
@@ -88,8 +88,8 @@ class CalendarApp:
         else:
             text_widget.insert('end', "No Events, Hooray!\n", 'center')
 
-        text_widget.configure(state='disabled')  # Make the Text widget read-only
-        text_widget.pack(pady=20, padx=20, fill='x', expand=True)
+        text_widget.configure(state = 'disabled')  # Make the Text widget read-only
+        text_widget.pack(pady = 20, padx = 20, fill = 'x', expand = True)
         
 def main():
     scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
