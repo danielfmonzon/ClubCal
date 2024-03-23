@@ -10,16 +10,25 @@ class Day:
         self.date = date
         self.events = []
 
-    def add_event(self, event):
-        self.events.append(event)
+    def add_event(self, event_name, event_start_time, event_duration):
+        self.events.append(Event(event_name, event_start_time, event_duration))
 
 
 class Calendar:
     def __init__(self):
+
+        day_map = {
+            0: "Monday",
+            1: "Tuesday",
+            2: "Wednesday",
+            3: "Thursday",
+            4: "Friday"
+        }
+
         self.weeks = [[], [], [], [], []]
         for i in range(4):
             for j in range(5):
-                self.weeks[i].append(Day(j, "day"))
+                self.weeks[i].append(Day(day_map[j], "day"))
 
 
 
