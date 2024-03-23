@@ -29,10 +29,30 @@ while still_receiving:
         still_receiving = False
 
     elif len(cur_col) != 1:
-        while len(cur_col) < 6:
+        event_dict[col_i-2] = []
+        chunk_i = 1
+
+        # COOKING SECTION
+
+        while len(cur_col) % 5 != 1:
             cur_col.append('')
 
-        event_dict[col_i - 2] = Event(cur_col[1], cur_col[2], cur_col[3], cur_col[4], cur_col[5])
+        while chunk_i < len(cur_col):
+            event_dict[col_i - 2].append(Event(cur_col[chunk_i], cur_col[chunk_i + 1], cur_col[chunk_i + 2], cur_col[chunk_i + 3], cur_col[chunk_i + 4]))
+            chunk_i += 5
+
+        # COOKING SECTION
+
+        '''while chunk_i < len(cur_col): # len(cur_col) is 9
+
+            # chunk =
+            while chunk_i % 5 != 0:
+                cur_col.append('')
+                chunk_i += 1
+
+            event_dict[col_i - 2].append(Event(cur_col[chunk_i - 4], cur_col[chunk_i - 3], cur_col[chunk_i - 2], cur_col[chunk_i - 1], cur_col[chunk_i]))
+            # chunk_i += 5'''
+
     col_i += 1
 
 
