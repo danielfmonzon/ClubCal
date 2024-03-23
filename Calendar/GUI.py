@@ -73,16 +73,23 @@ class CalendarApp:
                         
     def day_selected(self, day):
         # Create a pop-up window for the selected day
-        popup = tk.Toplevel(self.root, bg = "white")
+        popup = tk.Toplevel(self.root, bg = "#C9D2D5")
         popup.geometry("600x400")
         popup.title("Events")
+        
+        # Use a Text widget for complex formatting
+        text_widget = tk.Text(popup, font=('Times New Roman', 14), bg="white", height=10, width=50)
+        text_widget.tag_configure('center', justify='center')
+        text_widget.tag_configure('left', justify='left')
+        text_widget.insert('1.0', f"Day {day}\n", 'center')
         if self.data.get(day) is not None:
-            message_label = tk.Label(popup, text=f"Day {day}\n"+self.data[day].name+"\n"+self.data[day].description+"\n"+self.data[day].location+"\n"+self.data[day].start_time+"\n"+self.data[day].end_time, font=('Gentona', 14), bg="white", anchor='w', justify='left')
+            event_text = f"{self.data[day].name}\n{self.data[day].description}\n{self.data[day].location}\n{self.data[day].start_time}\n{self.data[day].end_time}"
+            text_widget.insert('end', event_text, 'left')
         else:
-            message_label = tk.Label(popup, text=f"Day {day}\nMore soon", font=('Gentona', 14), bg="white", anchor='w', justify='left')
+            text_widget.insert('end', "No Events, Hooray!\n", 'center')
 
-        # Align the label to the top left corner
-        message_label.pack(anchor='nw', padx=20, pady=20)
+        text_widget.configure(state='disabled')  # Make the Text widget read-only
+        text_widget.pack(pady=20, padx=20, fill='x', expand=True)
         
 def main():
     scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
