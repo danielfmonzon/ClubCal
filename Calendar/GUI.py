@@ -1,9 +1,12 @@
 import tkinter as tk
-import calendar
+import calendar_class
+
 class CalendarApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Calendar Events")
+        self.data={}
+        
 
         # Create the main frame with padding and pack it to expand and fill in both directions
         self.main_frame = tk.Frame(root, padx = 10, pady = 0)
@@ -20,7 +23,7 @@ class CalendarApp:
         # Create a frame for the days of the week labels
         days_frame = tk.Frame(self.main_frame)
         days_frame.pack(fill = tk.X, expand = True)
-        days_of_the_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+        days_of_the_week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     
         # Create and pack labels for the days of the week
         for day in days_of_the_week:
@@ -34,21 +37,23 @@ class CalendarApp:
             week_frame = tk.Frame(self.main_frame)
             week_frame.pack(fill = tk.X, expand = True)
 
-            for _ in range(5): # 5 days per week
+            for _ in range(7): # 5 days per week
                 day_button = tk.Button(week_frame, text = str(day_number),
                                        command = lambda d = day_number: self.day_selected(d))
                 # Pack day buttons side by side within the week frame, ensuring they fill out the row
                 day_button.pack(side = tk.LEFT, fill = tk.BOTH, expand = True)
                 day_number += 1
                 
-            day_number += 2 # Skip ahead by 2 days after each week
             
     def day_selected(self, day):
         # Create a pop-up window for the selected day
         popup = tk.Toplevel(self.root)
         popup.geometry("400x200")
         popup.title("Events")
-        message_label = tk.Label(popup, text = f"Day {day}\nMore soon", font = ('Times New Roman', 14))
+        if self.data.get(day) is not None:
+            message_label = tk.Label(popup, text=f"Day {day}\n"+self.data[day].name+"\n"+self.data[day].location+"\n"+self.data[day].start_time+"\n"+self.data[day].dur, font = ('Times New Roman', 14))
+        else:
+            message_label = tk.Label(popup, text = f"Day {day}\nMore soon", font = ('Times New Roman', 14))
         message_label.pack(pady = 20, padx = 20)
         
 def main():
