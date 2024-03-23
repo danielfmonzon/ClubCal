@@ -1,8 +1,9 @@
 class Event:
-    def __init__(self, name, start_time, duration):
+    def __init__(self, name, location, start_time, dur):
         self.name = name
+        self.location = location
         self.start_time = start_time
-        self.duration = duration
+        self.dur = dur
 
 class Day:
     def __init__(self, day_of_week, date):
@@ -10,8 +11,8 @@ class Day:
         self.date = date
         self.events = []
 
-    def add_event(self, event):
-        self.events.append(event)
+    def add_event(self, e_name, e_location, e_start_time, e_dur):
+        self.events.append(Event(e_name, e_location, e_start_time, e_dur))
 
 
 class Calendar:
