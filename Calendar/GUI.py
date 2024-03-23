@@ -1,15 +1,18 @@
 import tkinter as tk
 import calendar_class
 import calendar
+from calendar_class import Event
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 from calendar import monthrange, weekday
 
 class CalendarApp:
-    def __init__(self, root, year = 2024, month = 4):
+    def __init__(self, root, data,  year = 2024, month = 4):
         self.root = root
         self.root.title("Calendar Events")
-        self.data = {}
+        self.data = data
         self.year = year
-        self.month = month   
+        self.month = month
 
         # Create the main frame with padding and pack it to expand and fill in both directions
         self.main_frame = tk.Frame(root, padx = 10, pady = 0)
@@ -79,8 +82,36 @@ class CalendarApp:
         message_label.pack(pady = 20, padx = 20)
         
 def main():
+    scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
+
+    creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
+
+    client = gspread.authorize(creds)
+
+    sheet = client.open("CourseCal_dataset").sheet1
+
+    # data = sheet.get_all_records()
+    # testcol = sheet.col_values(3)
+
+    still_receiving = True
+    col_i = 3
+    event_dict = {}
+
+    while still_receiving:
+        cur_col = sheet.col_values(col_i)
+
+        # if len(cur_col) == 1 or len(cur_col) == 0:
+        if len(cur_col) == 0:
+            still_receiving = False
+
+        elif len(cur_col) != 1:
+            while len(cur_col) < 6:
+                cur_col.append('')
+
+            event_dict[col_i - 2] = Event(cur_col[1], cur_col[2], cur_col[3], cur_col[4], cur_col[5])
+    col_i += 1
     root = tk.Tk()
-    app = CalendarApp(root)
+    app = CalendarApp(root, event_dict)
     root.geometry("600x400")  # You can adjust the size as needed
     root.mainloop()
 
