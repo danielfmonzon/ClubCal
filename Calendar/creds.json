@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "coursecalsheets",
+  "private_key_id": "f62d9edde6311f4e16ea5e4704e9338d3de0dba2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCGmwyD7n4fZm4c\nV9Dn0kt8XLyo0nx/jQNd1pCLVHAzmngtfNsX/AjqsF3u33vcoztii4tbGWQnjphx\nAiX7siSndjewfRIsIooPPICi5wEs96McdnbNNhLjI75QELjXtOEPijPCWKOpMBLE\nQ94bvX79bNjp/v1sgRGv1nWw1Y6UmVkrMluNZLLNoUogLteuu+7G1Jy0RFnJZY9A\nmcuusVy1VoNg9pDjSuIuQMBEruAu8PZ9JW/uV+CgdEtaFTGEtbKYHNDTVUHG8Kng\nSt9AsIEOiHruedCKaht5qx1pDiUt0mLbA+Bbh1EX9UpNXw6BGrItBkK+mVsvsLxu\nyO2sAINFAgMBAAECggEAFToYRCn1C8Ccdq3GjPhV3RvGyJzA82Bqen7etoovU4P1\nlb7N0j91rIT5mzT1FHtNXyIAbPJZH//VvGSJVuLl8t6qs5NVrU4ZFYQGCSqCvfOj\nblakL4JqghVd6sRoUeP9ZfT2apyN2p1xKDBHs3ozr4Vdw7DpiBXmkyMv1h4naPl3\nTSCSMSXw+QfRNC2pq0zBx/lDK1jmtuxizEvXMBjggZMBQrdSDbFTJ+0BNFe0mIV8\ni2waelWbvYv2DakBJxRAm4xjohI4OODvwVzyj0SSJn9fFBq23BjaHmS4QZu7RD0J\n+pmWI7e45N2VhF2v9YE3I2/OHcEq26Dd2o+tlzpPgQKBgQC98dDUxXIiAAvAKvpy\nBn52ajVsVKsvMsWUXqKNWbvxhQZcCxEsazoH+SOt3aDvd7gpcXtNF5XhlH0Ooakw\ne9eUCMb7MK+EHzcYbh8bsxqtEnFsbYc3nOdm/nuM3+JoK2/GmWGHYj0PymoiOJnk\nmLmrqDCt4MzFYcRF7ATKy6aDIQKBgQC1apPmsr2touKxN/0KG4KTtvuBApWfaLLP\n8GQYtR1useXrGfAS+YfAyXuqgftdOnPNS6ecrDNRbbdjt9Ny82HBhylEt+EO5iRP\n3zEkE8MfVX9f3K1EN+cRiWhrvnOskAnUH0OO9x0bz5/0PQRFJnLkxAZEGgiDjcaT\nzah20y0fpQKBgQCVs7RnPYaKjYa1WioxHDUnluWsD78rX9Sg70UmKocZ/0HX4VET\ntR7zkcQxD+/7TFv1Ld+EDwat154Inhj+gVyS66gH6YMrmn6N3pzd8/ceWN7UGi7s\nAdnPLtqpWPrUJwfdep2HWkHN5DZp6jpAFK6hP9m98OLy3e8XPME6I++EgQKBgQCC\n63Hmt7D4oKbV26DJbYbzEMc5l+LgUk9Qjpu91N5zpwBUhLhjCR61uvF64CjFY8x0\nKBfCkebK6dHBrcRznT47yk224LgS53TnCxvMfFKAx1OPm5KSu4EOf8oSjzOtIZlm\nMlWv05d3HYPCX1I4kQGzI9+dv+fLAEKBIZZkggt7XQKBgQCY4PSLn7mkzWgeqP4A\naUDZUycxxGEhLqhlAxmBBHAu2WTdaf7+2lbKcYG9vYGohvasJZKTG6ZbEk1NBz0p\nNp7KlmKo3OdLdhGwTaxQJZz5eSMIU0le4BeuwBoYeyCjr8YawDpL3Z2uwEETXvQg\nhf5akv8RxY2Cf4tfeBuNy33Jug==\n-----END PRIVATE KEY-----\n",
+  "client_email": "coursecalbot@coursecalsheets.iam.gserviceaccount.com",
+  "client_id": "110338276342115804933",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/coursecalbot%40coursecalsheets.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
