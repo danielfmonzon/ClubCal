@@ -76,7 +76,7 @@ class CalendarApp:
         popup.geometry("400x200")
         popup.title("Events")
         if self.data.get(day) is not None:
-            message_label = tk.Label(popup, text=f"Day {day}\n"+self.data[day].name+"\n"+self.data[day].location+"\n"+self.data[day].start_time+"\n"+self.data[day].dur, font = ('Times New Roman', 14))
+            message_label = tk.Label(popup, text=f"Day {day}\n"+self.data[day].name+"\n"+self.data[day].description+"\n"+self.data[day].location+"\n"+self.data[day].start_time+"\n"+self.data[day].end_time, font = ('Times New Roman', 14))
         else:
             message_label = tk.Label(popup, text = f"Day {day}\nMore soon", font = ('Times New Roman', 14))
         message_label.pack(pady = 20, padx = 20)
@@ -109,7 +109,7 @@ def main():
                 cur_col.append('')
 
             event_dict[col_i - 2] = Event(cur_col[1], cur_col[2], cur_col[3], cur_col[4], cur_col[5])
-    col_i += 1
+        col_i += 1
     root = tk.Tk()
     app = CalendarApp(root, event_dict)
     root.geometry("600x400")  # You can adjust the size as needed
