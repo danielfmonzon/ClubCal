@@ -8,7 +8,7 @@ from calendar import monthrange, weekday
 from math import ceil
 
 class CalendarApp:
-    def __init__(self, root, data,  year = 2024, month = 4):
+    def __init__(self, root, data,  year = 2024, month = 3):
         self.root = root
         self.root.title("Calendar Events")
         self.data = data
