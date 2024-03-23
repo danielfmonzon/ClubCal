@@ -1,6 +1,5 @@
 import tkinter as tk
 import calendar
-
 class CalendarApp:
     def __init__(self, root):
         self.root = root
@@ -37,7 +36,7 @@ class CalendarApp:
 
             for _ in range(5): # 5 days per week
                 day_button = tk.Button(week_frame, text = str(day_number),
-                                       command = lambda d = day_number: self.day_selection(d))
+                                       command = lambda d = day_number: self.day_selected(d))
                 # Pack day buttons side by side within the week frame, ensuring they fill out the row
                 day_button.pack(side = tk.LEFT, fill = tk.BOTH, expand = True)
                 day_number += 1
@@ -45,10 +44,13 @@ class CalendarApp:
             day_number += 2 # Skip ahead by 2 days after each week
             
     def day_selected(self, day):
-        # Placeholder for what happens when a day is selected, such as opening a new window to add/view events
-        #messagebox.showinfo("Day Selected", f"Day {day + 1} selected.")
-        pass
-    
+        # Create a pop-up window for the selected day
+        popup = tk.Toplevel(self.root)
+        popup.geometry("400x200")
+        popup.title("Events")
+        message_label = tk.Label(popup, text = f"Day {day}\nMore soon", font = ('Times New Roman', 14))
+        message_label.pack(pady = 20, padx = 20)
+        
 def main():
     root = tk.Tk()
     app = CalendarApp(root)
