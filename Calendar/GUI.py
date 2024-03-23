@@ -1,12 +1,14 @@
 import tkinter as tk
 import calendar_class
+from calendar import monthrange, weekday
 
 class CalendarApp:
-    def __init__(self, root):
+    def __init__(self, root, year = 2024, month = 2):
         self.root = root
         self.root.title("Calendar Events")
-        self.data={}
-        
+        self.data = {}
+        self.year = year
+        self.month = month   
 
         # Create the main frame with padding and pack it to expand and fill in both directions
         self.main_frame = tk.Frame(root, padx = 10, pady = 0)
@@ -29,17 +31,28 @@ class CalendarApp:
         for day in days_of_the_week:
             day_label = tk.Label(days_frame, text = day)
             day_label.pack(side = tk.LEFT, expand = True, fill = tk.BOTH)
+            
+        # Get the first day of the week (0 for Monday, 6 for Sunday)
+        first_weekday, num_days = monthrange(self.year, self.month)
+        # Adjust start_day based on the first_weekday
+        start_day = -first_weekday
 
-        day_number = 1 # starting value
+        # Calculate the total number of buttons to create
+        total_days = num_days + (4 - first_weekday) % 7 + (6 - ((first_weekday + num_days - 1) % 7))
+        
+        day_number = start_day
         # Create the calendar with weeks and days
-        for week in range(4):
+        for week in range(6):
             # Create a frame for each week
             week_frame = tk.Frame(self.main_frame)
             week_frame.pack(fill = tk.X, expand = True)
 
-            for _ in range(7): # 5 days per week
-                day_button = tk.Button(week_frame, text = str(day_number),
-                                       command = lambda d = day_number: self.day_selected(d))
+            for _ in range(7): # 7 days per week
+                if day_number < 1 or day_number > num_days:
+                    day_button = tk.Button(week_frame, text = "", state = "disabled")
+                else:
+                    day_button = tk.Button(week_frame, text = str(day_number),
+                                           command = lambda d = day_number: self.day_selected(d))
                 # Pack day buttons side by side within the week frame, ensuring they fill out the row
                 day_button.pack(side = tk.LEFT, fill = tk.BOTH, expand = True)
                 day_number += 1
