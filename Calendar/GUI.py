@@ -16,19 +16,19 @@ class CalendarApp:
         self.month = month
 
         # Create the main frame with padding and pack it to expand and fill in both directions
-        self.main_frame = tk.Frame(root, padx = 10, pady = 0, bg = "blue")
+        self.main_frame = tk.Frame(root, padx = 10, pady = 0, bg = "#C9D2D5")
         self.main_frame.pack(fill = tk.BOTH, expand = True)
         
         # Create a separate frame for the month/year and title labels
-        title_frame = tk.Frame(self.main_frame, pady = 10, bg = "orange")
+        title_frame = tk.Frame(self.main_frame, pady = 10, bg = "#0021A5")
         title_frame.pack(fill = tk.X)
         
         # Display the current month and year in the top left corner
-        month_year_label = tk.Label(title_frame, text = f"{calendar.month_name[self.month]} {self.year}", font = ('Times New Roman', 12), bg = "orange")
+        month_year_label = tk.Label(title_frame, text = f"{calendar.month_name[self.month]} {self.year}", font = ('Times New Roman', 12), bg = "#0021A5")
         month_year_label.pack(side=tk.LEFT, anchor = 'nw')
         
         # Make title label bigger and centered at the very top of the main_frame
-        self.title_label = tk.Label(title_frame, text = "CourseCal", font = ('Times New Roman', 20), bg = "orange")
+        self.title_label = tk.Label(title_frame, text = "CourseCal", font = ('Times New Roman', 20), bg = "#0021A5")
         # Pack the label at the top of the window
         self.title_label.pack(side = tk.TOP, fill = tk.X)
         
@@ -40,7 +40,7 @@ class CalendarApp:
         days_of_the_week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
         for day in days_of_the_week:
-            day_label = tk.Label(days_frame, text = day, font = ('Times New Roman', 12), bg = "blue")
+            day_label = tk.Label(days_frame, text = day, font = ('Times New Roman', 12), bg = "#FA4616")
             day_label.pack(side = tk.LEFT, expand = True, fill = tk.BOTH)
 
         first_weekday, num_days = monthrange(self.year, self.month)
