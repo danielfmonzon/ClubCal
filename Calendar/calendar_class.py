@@ -1,9 +1,17 @@
 class Event:
-    def __init__(self, name, location, start_time, dur):
+    def __init__(self, name, description, location, start_time, end_time):
         self.name = name
+        self.description = description
         self.location = location
         self.start_time = start_time
-        self.dur = dur
+        self.end_time = end_time
+
+    def event_print(self):
+        print(f"Name: {self.name}")
+        print(f"Description: {self.description}")
+        print(f"Location: {self.location}")
+        print(f"Start Time: {self.start_time}")
+        print(f"End Time: {self.end_time}")
 
 class Day:
     def __init__(self, day_of_week, date):
@@ -11,8 +19,8 @@ class Day:
         self.date = date
         self.events = []
 
-    def add_event(self, e_name, e_location, e_start_time, e_dur):
-        self.events.append(Event(e_name, e_location, e_start_time, e_dur))
+    def add_event(self, e_name, e_description, e_location, e_start_time, e_end_time):
+        self.events.append(Event(e_name, e_description, e_location, e_start_time, e_end_time))
 
 
 class Calendar:
@@ -32,23 +40,3 @@ class Calendar:
         for i in range(4):
             for j in range(5):
                 self.weeks[i].append(Day(day_map[j], "day"))
-
-
-
-'''class Calendar_old:
-    def __init__(self):
-        self.weeks = [[None] * 5 for _ in range(4)]
-
-class Day_old:
-    def __init__(self, date):
-        self.date = date
-        self.event_labels = []
-        self.event_times = []
-
-    def add_event(self, event_label, event_time):
-        self.event_labels.append(event_label)
-        self.event_times.append(event_time)
-
-    def edit_event(self, old_label, old_time, new_label, new_time):
-        print("editing event")
-'''
