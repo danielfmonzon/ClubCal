@@ -83,8 +83,9 @@ class CalendarApp:
         text_widget.tag_configure('left', justify = 'left')
         text_widget.insert('1.0', f"Day {day}\n", 'center')
         if self.data.get(day) is not None:
-            event_text = f"{self.data[day].name}\n{self.data[day].description}\n{self.data[day].location}\n{self.data[day].start_time}\n{self.data[day].end_time}"
-            text_widget.insert('end', event_text, 'left')
+            for i in range(len(self.data[day])):
+                event_text = f"{self.data[day][i].name}\n{self.data[day][i].description}\n{self.data[day][i].location}\n{self.data[day][i].start_time}\n{self.data[day][i].end_time}"
+                text_widget.insert('end', event_text, 'left')
         else:
             text_widget.insert('end', "No Events, Hooray!\n", 'center')
 
@@ -110,15 +111,19 @@ def main():
     while still_receiving:
         cur_col = sheet.col_values(col_i)
 
-        # if len(cur_col) == 1 or len(cur_col) == 0:
         if len(cur_col) == 0:
             still_receiving = False
 
         elif len(cur_col) != 1:
-            while len(cur_col) < 6:
+            event_dict[col_i - 2] = []
+            chunk_i = 1
+
+            while len(cur_col) % 5 != 1:
                 cur_col.append('')
 
-            event_dict[col_i - 2] = Event(cur_col[1], cur_col[2], cur_col[3], cur_col[4], cur_col[5])
+            while chunk_i < len(cur_col):
+                event_dict[col_i - 2].append(Event(cur_col[chunk_i], cur_col[chunk_i + 1], cur_col[chunk_i + 2], cur_col[chunk_i + 3], cur_col[chunk_i + 4]))
+                chunk_i += 5
         col_i += 1
     root = tk.Tk()
     app = CalendarApp(root, event_dict)
