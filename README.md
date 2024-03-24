@@ -25,9 +25,9 @@ Follow the steps here (<https://developers.google.com/sheets/api/quickstart/pyth
 
 Running ClubCal:
 
-With the dependencies installed and the Sheets API set up, you can now run ClubCal:
+With the dependencies installed and the Sheets API set up, you can now run calGUI:
 
-python clubcal.py
+python calGUI.py
 
 # Usage
 
