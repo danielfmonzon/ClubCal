@@ -23,10 +23,10 @@ class CalendarApp:
         self.month = month
         self.name = name
 
-        self.notes_file = "notes.txt"
+        self.notes_file = resource_path("notes.txt")  # Adjusted to use resource_path
         self.notes_dict = {}
 
-        with open("notes.txt", "r") as file:
+        with open(self.notes_file, "r") as file:
             token = 0
             for line in file:
                 if line == "":
