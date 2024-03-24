@@ -50,7 +50,9 @@ This program was crafted by Daniel Monzon, Sushanth Kumar Vutukuri, and Caleb Ox
 # Add on LinkedIn
 Daniel Monzon:
 - <https://www.linkedin.com/in/daniel-monzon15/>
+
 Sushanth Kumar Vutukuri:
 - <https://www.linkedin.com/in/sushanth-kumar-vutukuri-999043244/>
+
 Caleb Oxborough:
 - <https://www.linkedin.com/in/caleb-oxborough/>
