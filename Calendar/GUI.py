@@ -7,6 +7,8 @@ from oauth2client.service_account import ServiceAccountCredentials
 from calendar import monthrange, weekday
 from math import ceil
 from PIL import Image, ImageTk
+import os
+import sys
 
 # The blue color code for the Florida Gators logo is Pantone: PMS 287 C, Hex Color: #0021A5, RGB: (0, 33, 165), CMYK: (100, 60, 0, 20). 
 # The orange color code for the Florida Gators logo is Pantone: PMS 172 C, Hex Color: #FA4616, RGB: (250, 70, 22), CMYK: (0, 70, 100, 0).
@@ -40,7 +42,14 @@ class CalendarApp:
         self.main_frame = tk.Frame(root, padx = 10, pady = 0, bg = "#C9D2D5")
         self.main_frame.pack(fill=tk.BOTH, expand=True)
         
-        image_path = r"University-of-Florida-Logo-PNG2.png"  # Adjust the path as necessary
+        # Determine if the application is frozen (packaged into an executable)
+        if getattr(sys, 'frozen', False):
+            bundle_dir = sys._MEIPASS  # This is the temporary directory for the executable
+        else:
+            bundle_dir = os.path.dirname(os.path.abspath(__file__))  # Directory of the script file
+
+        # Adjust the image path to work with both script and bundled executable
+        image_path = os.path.join(bundle_dir, 'University-of-Florida-Logo-PNG2.png')
         pil_image = Image.open(image_path)
 
         # Resize the image to fit in the corner using Image.LANCZOS
