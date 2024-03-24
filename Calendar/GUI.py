@@ -15,11 +15,26 @@ from PIL import Image, ImageTk
 class CalendarApp:
     def __init__(self, root, data, name, year = 2024, month = 3):
         self.root = root
-        self.root.title("CourseCal")
+        self.root.title("ClubCal")
         self.data = data
         self.year = year
         self.month = month
         self.name = name
+
+        self.notes_file = "notes.txt"
+        self.notes_dict = {}
+
+        with open("notes.txt", "r") as file:
+            token = 0
+            for line in file:
+                if line == "":
+                    continue
+                if line[0] == "~":
+                    token = int(line[1])
+                    self.notes_dict[token] = ""
+                else:
+                    self.notes_dict[token] += line
+
 
         # Create the main frame with padding and pack it to expand and fill in both directions
         self.main_frame = tk.Frame(root, padx = 10, pady = 0, bg = "#C9D2D5")
@@ -111,6 +126,9 @@ class CalendarApp:
         notes_label.pack(pady = (10, 0))  # Add some padding above the label
 
         notes_widget = tk.Text(popup, font = ('Gentona', 14), bg = "white", height = 5, width = 50)
+        if self.notes_dict.get(day) is not None:
+            notes_text = self.notes_dict[day]
+            notes_widget.insert('end', notes_text, 'left')
         notes_widget.pack(pady = 10, padx = 20, fill = 'x', expand = True)
 
         # Optionally, add a save button for the notes
@@ -120,6 +138,22 @@ class CalendarApp:
     def save_notes(self, day, notes):
         # Implement the logic to save the notes here
         # For example, store them in self.data or write to a file
+
+        with open(self.notes_file, "a") as file:
+            file.write("~" + str(day) + "\n" + notes + "\n")
+
+        with open("notes.txt", "r") as file:
+            token = 0
+            for line in file:
+                if line == "":
+                    continue
+                if line[0] == "~":
+                    token = int(line[1])
+                    self.notes_dict[token] = ""
+                else:
+                    self.notes_dict[token] += line
+
+
         print(f"Notes for Day {day}: {notes}")
 
         
