@@ -13,12 +13,13 @@ from PIL import Image, ImageTk
 # Gentona is the primary workhorse for UF communications.
 
 class CalendarApp:
-    def __init__(self, root, data, year = 2024, month = 3):
+    def __init__(self, root, data, name, year = 2024, month = 3):
         self.root = root
         self.root.title("CourseCal")
         self.data = data
         self.year = year
         self.month = month
+        self.name = name
 
         # Create the main frame with padding and pack it to expand and fill in both directions
         self.main_frame = tk.Frame(root, padx = 10, pady = 0, bg = "#C9D2D5")
@@ -44,7 +45,7 @@ class CalendarApp:
         image_label.pack(side = tk.RIGHT, anchor = 'ne', padx = 10)
 
         # Make title label bigger and centered at the very top of the main_frame
-        self.title_label = tk.Label(title_frame, text = "CourseCal", font = ('Gentona', 20), bg = "#0021A5", fg = "white")
+        self.title_label = tk.Label(title_frame, text = self.name, font = ('Gentona', 20), bg = "#0021A5", fg = "white")
         # Pack the label at the top of the window
         self.title_label.pack(side = tk.TOP, fill = tk.X)
 
@@ -156,7 +157,7 @@ def main():
                 chunk_i += 5
         col_i += 1
     root = tk.Tk()
-    app = CalendarApp(root, event_dict)
+    app = CalendarApp(root, event_dict, sheet.cell(1, 1).value)
     root.geometry("1200x600")  # You can adjust the size as needed
     root.mainloop()
 
