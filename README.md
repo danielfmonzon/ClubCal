@@ -43,6 +43,6 @@ Upon launching ClubCal, enter the ID of the Google Sheet you wish to integrate w
 
 ClubCal is a testament to what can be achieved when technology is applied to solve real-life challenges. We hope this tool helps you manage your time more effectively and brings a new level of organization to your daily life.
 
-# DEVELOPERS AND INFORMATION
+# Developers and Information
 
 This program was developed by Daniel Monzon, Sushanth Kumar Vutukuri, and Caleb Oxborough for the University of Florida Open-Source Club Mini-Hack. Future developments are being worked. All developers are currently students at the University of Florida.
