@@ -24,7 +24,7 @@ class CalendarApp:
         self.main_frame = tk.Frame(root, padx = 10, pady = 0, bg = "#C9D2D5")
         self.main_frame.pack(fill=tk.BOTH, expand=True)
         
-        image_path = r"C:\Users\danmo\Downloads\University-of-Florida-Logo-PNG2.png"  # Adjust the path as necessary
+        image_path = r"University-of-Florida-Logo-PNG2.png"  # Adjust the path as necessary
         pil_image = Image.open(image_path)
 
         # Resize the image to fit in the corner using Image.LANCZOS
@@ -91,9 +91,9 @@ class CalendarApp:
         popup.title(f"{month_dic[self.month]} {day}, {self.year}")
 
         # Use a Text widget for complex formatting
-        text_widget = tk.Text(popup, font=('Gentona', 14), bg="white", height=10, width=50)
-        text_widget.tag_configure('center', justify='center')
-        text_widget.tag_configure('left', justify='left')
+        text_widget = tk.Text(popup, font = ('Gentona', 14), bg = "white", height = 10, width = 50)
+        text_widget.tag_configure('center', justify = 'center')
+        text_widget.tag_configure('left', justify = 'left')
         text_widget.insert('1.0', f"Day {day}\n", 'center')
         if self.data.get(day) is not None:
             for i in range(len(self.data[day])):
@@ -103,7 +103,7 @@ class CalendarApp:
             text_widget.insert('end', "No Events, Hooray!\n", 'center')
 
         text_widget.configure(state = 'disabled')  # Make the Text widget read-only
-        text_widget.pack(pady = 20, padx = 20, fill = 'x', expand=True)
+        text_widget.pack(pady = 20, padx = 20, fill = 'x', expand = True)
 
         # Add a new Text widget for notes
         notes_label = tk.Label(popup, text = "Notes:", font = ('Gentona', 14), bg = "#C9D2D5")
