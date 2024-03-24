@@ -11,7 +11,7 @@ ClubCal
 
 Clone the Repository:
 
-git clone <https://github.com/yourusername/ClubCal.git>
+git clone <https://github.com/yourusername/HACK.git>
 
 Install Dependencies:
 
