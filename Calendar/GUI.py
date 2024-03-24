@@ -165,11 +165,20 @@ class CalendarApp:
 
         print(f"Notes for Day {day}: {notes}")
 
-        
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
+    
 def main():
     scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
 
-    creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
+    # Use the function to get the correct path for creds.json
+    creds_path = resource_path('creds.json')
+    
+    # Now use creds_path instead of "creds.json"
+    creds = ServiceAccountCredentials.from_json_keyfile_name(creds_path, scope)
 
     client = gspread.authorize(creds)
 
