@@ -11,7 +11,7 @@
 
 Clone the Repository:
 
-git clone <https://github.com/yourusername/HACK.git>
+git clone <https://github.com/yourusername/ClubCal.git>
 
 Install Dependencies:
 
@@ -56,4 +56,3 @@ Sushanth Kumar Vutukuri:
 
 Caleb Oxborough:
 - <https://www.linkedin.com/in/caleb-oxborough/>
-
