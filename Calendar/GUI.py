@@ -84,7 +84,7 @@ class CalendarApp:
         text_widget.insert('1.0', f"Day {day}\n", 'center')
         if self.data.get(day) is not None:
             for i in range(len(self.data[day])):
-                event_text = f"{self.data[day][i].name}\n{self.data[day][i].description}\n{self.data[day][i].location}\n{self.data[day][i].start_time}\n{self.data[day][i].end_time}"
+                event_text = f"Event Name: {self.data[day][i].name}\nDescription: {self.data[day][i].description}\nLocation: {self.data[day][i].location}\nStart Time: {self.data[day][i].start_time}\nEnd Time: {self.data[day][i].end_time}"
                 text_widget.insert('end', event_text, 'left')
         else:
             text_widget.insert('end', "No Events, Hooray!\n", 'center')
