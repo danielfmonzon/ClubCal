@@ -1,4 +1,4 @@
-# ClubCal
+# Club Calendar GUI
 
 # Features
 
