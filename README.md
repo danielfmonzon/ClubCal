@@ -25,6 +25,8 @@ Launch "GUI.exe." If it warns you that the executable is suspicious, select "mor
 
 # Setup (Option 2)
 
+This setup method is designed for people who have Python installed and are familiar with Command Line Interfaces.
+
 Clone the Repository:
 
 git clone <https://github.com/yourusername/ClubCal.git>
