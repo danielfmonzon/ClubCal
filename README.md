@@ -45,4 +45,4 @@ ClubCal is a testament to what can be achieved when technology is applied to sol
 
 # Developers and Information
 
-This program was developed by Daniel Monzon, Sushanth Kumar Vutukuri, and Caleb Oxborough for the University of Florida Open-Source Club Mini-Hack. Future developments are being worked on. All developers are currently studying at the University of Florida.
+This program was crafted by Daniel Monzon, Sushanth Kumar Vutukuri, and Caleb Oxborough, contributing their skills and creativity during a Mini-Hack event hosted by the University of Florida Open-Source Club. Their collaboration represents a blend of innovation and dedication, reflecting their academic journey at the University of Florida. As they continue their studies, they are also working on future enhancements for the project, showcasing their commitment to development and learning.
