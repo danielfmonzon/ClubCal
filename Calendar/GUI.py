@@ -151,7 +151,7 @@ class CalendarApp:
         with open(self.notes_file, "a") as file:
             file.write("~" + str(day) + "\n" + notes + "\n")
 
-        with open("notes.txt", "r") as file:
+        with open(self.notes_file, "r") as file:
             token = 0
             for line in file:
                 if line == "":
