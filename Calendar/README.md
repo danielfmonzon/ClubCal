@@ -2,12 +2,28 @@
 
 # Features
 
-- Google Sheets Integration: Pulls data from a Google Sheet at every app launch, ensuring your schedule is always current.
+- Google Sheets Integration: Pulls data from a Google Sheet at every app launch, ensuring your schedule is always up-to-date.
 - Data Parsing: Sophisticated parsing system organizes events by date and handles empty cells intelligently.
-- Interactive Calendar: A Tkinter-based graphical user interface that allows for easy viewing and editing of your schedule.
+- Interactive Calendar: A Tkinter-based graphical user interface that allows for easy viewing of your schedule as well as adding personal notes.
 - Local Data Storage: Merges online updates with local notes, providing a personalized scheduling experience.
 
-# Setup Instructions
+# Setup (Option 1)
+
+Navigate to the repository page:
+
+<https://github.com/danielfmonzon/ClubCal>
+
+Click Calendar
+
+Click dist
+
+Click GUI.exe
+
+Click "Download raw file"
+
+Run GUI.exe from your downloads
+
+# Setup (Option 2)
 
 Clone the Repository:
 
@@ -21,7 +37,9 @@ pip install -r requirements.txt
 
 Google Sheets API Setup:
 
-Follow the steps here (<https://developers.google.com/sheets/api/quickstart/python>) to enable the Sheets API and download your credentials.json file into the ClubCal folder.
+Enable the Google Drive and Google Sheets APIs by following this guide: <https://www.youtube.com/watch?v=cnPlKLEGR7E>
+
+If you are having issues, follow the steps here (<https://developers.google.com/sheets/api/quickstart/python>) to enable the Sheets API and download your credentials.json file into the ClubCal folder.
 
 Running ClubCal:
 
@@ -31,7 +49,7 @@ python calGUI.py
 
 # Usage
 
-Upon launching ClubCal, enter the ID of the Google Sheet you wish to integrate with. The app will display your schedule in an interactive calendar. You can add personal notes to any date, which are saved locally and displayed alongside your Google Sheets data.
+Upon launching ClubCal, the app will display your schedule in an interactive calendar. You can add personal notes to any date, which are saved locally and displayed alongside your Google Sheets data. Each time you relaunch the app, your calendar's data will be synced up with the sheet again.
 
 # Dependencies
 
@@ -41,13 +59,12 @@ Upon launching ClubCal, enter the ID of the Google Sheet you wish to integrate w
 - google-auth-oauthlib
 - Tkinter
 
-ClubCal is a testament to what can be achieved when technology is applied to solve real-life challenges. We hope this tool helps you manage your time more effectively and brings a new level of organization to your daily life.
-
 # Developers and Information
 
-This program was crafted by Daniel Monzon, Sushanth Kumar Vutukuri, and Caleb Oxborough, contributing their skills and creativity during a Mini-Hack event hosted by the University of Florida Open-Source Club. Their collaboration represents a blend of innovation and dedication, reflecting their academic journey at the University of Florida. As they continue their studies, they are also working on future enhancements for the project, showcasing their commitment to development and learning.
+This program was crafted by Daniel Monzon, Sushanth Kumar Vutukuri, and Caleb Oxborough for a Mini-Hack event hosted by UF's Open-Source Club. We had a blast working on this project, and look forward to developing more small apps in a competitive environment in the future!
 
 # Add on LinkedIn
+
 Daniel Monzon:
 - <https://www.linkedin.com/in/daniel-monzon15/>
 
