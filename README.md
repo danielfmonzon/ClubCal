@@ -13,15 +13,15 @@ Navigate to the repository page:
 
 <https://github.com/danielfmonzon/ClubCal>
 
-Click Calendar
+Click the green "Code" button
 
-Click dist
+Click "Download ZIP"
 
-Click GUI.exe
+(Feel free to move the ZIP to the location of your choice and) Extract the ZIP (right click the ZIP and select Extract All, then Extract)
 
-Click "Download raw file"
+Navigate to ClubCal-main->ClubCal->main->Calendar->dist
 
-Run GUI.exe from your downloads
+Launch "GUI.exe." If it warns you that the executable is suspicious, select "more info," then "run anyway." (Note: this is not advisable in most cases, but your OS will likely throw a virus check because we are an unknown publisher. All the code compressed into the executable is viewable on this repository though - this project is completely open source)
 
 # Setup (Option 2)
 
