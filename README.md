@@ -65,6 +65,8 @@ Upon launching ClubCal, the app will display your schedule in an interactive cal
 
 This program was crafted by Daniel Monzon, Sushanth Kumar Vutukuri, and Caleb Oxborough for a Mini-Hack event hosted by UF's Open-Source Club. We had a blast working on this project, and look forward to developing more small apps in a competitive environment in the future!
 
+Demo: <https://www.youtube.com/watch?v=LRFbXm8VAfY>
+
 # Add on LinkedIn
 
 Daniel Monzon:
